@@ -282,10 +282,11 @@ function getDocumentHorsPatient():array{
         $request->bindParam(2, $_POST['Contenu']);
         $request->bindParam(3, $_POST['typDocu']);
         $request->bindParam(4, $_POST['motif']);
+        }else{
+          $request = $PDO->prepare('SELECT * FROM documents');
+        }
         $request -> execute();
         return $request -> fetchAll(PDO::FETCH_ASSOC);
-        }
-        return array('<p class="alert alert-danger" style="padding-left:350px;">Vous n\'avez pas rempli tous les champs.</p>');
       } catch (PDOException $pe) {
         echo 'ERREUR : '.$pe->getMessage();
       }

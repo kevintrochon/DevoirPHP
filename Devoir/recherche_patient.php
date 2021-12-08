@@ -92,12 +92,10 @@
               <td>'.$key['Prenom'] .'</td>
               <td><a href="fiche_patient.php?var1='.$key['CodePatients'].'" title="Détails">'.$key['Nom'].$key['Prenom'].'  </a></td>
               <td>'.$key['name'] .'</td>';
-              echo '<td><form action="recherche_patient.php" method="post">          
+              echo '<td><form action="download.php" method="post">
+              <input name="filePath" type="hidden" value = "'.$key['path'].'"/>
+              <input name="patient" type="hidden" value = "patient"/>      
               <input type="submit" class="btn btn-outline-info" name="download" value="💾" style="width: 100%;height:center;" /></form></td>';
-              if(isset($_POST['download']) && ! empty($_POST['download']))
-              {
-                download($key['path']);
-              }
               echo '<td><form action="visualisation.php" method="post">
                         <input name="filePathVisualiser" type="hidden" value = "'.$key['path'].'"/>
                         <input type="submit" class="btn btn-outline-info" name="visualiser" value="👀" style="width: 100%;height:center;"/></form></td>';

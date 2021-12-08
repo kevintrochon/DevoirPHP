@@ -15,8 +15,6 @@ function download($filePath){
   header('Content-Type: application/octet-stream');
   
   header('Content-Transfert-Encoding: Binary');
-
-  header('Content-Length: ' . filesize($filePath));
   
   header('Content-disposition: attachment; filename="'. basename($filePath) .'"');
   
