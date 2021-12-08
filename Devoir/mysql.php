@@ -294,7 +294,7 @@ function getDocumentHorsPatient():array{
 /**
  * Récupération de le nom du client via son nom.
  */
-function getNomPatientByName($name):bool{
+function verifNomPatient($name):bool{
   require 'db-config.php';
   $is_exist = $false;
   try {

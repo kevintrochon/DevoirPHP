@@ -93,11 +93,10 @@
               <td><a href="fiche_patient.php?var1='.$key['CodePatients'].'" title="Détails">'.$key['Nom'].$key['Prenom'].'  </a></td>
               <td>'.$key['name'] .'</td>';
               echo '<td><form action="recherche_patient.php" method="post">          
-              <input name="filePathDownload" type="hidden" value = "'.$key['path'].'"/>
               <input type="submit" class="btn btn-outline-info" name="download" value="💾" style="width: 100%;height:center;" /></form></td>';
-              if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['filePathDownload']))
+              if(isset($_POST['download']) && ! empty($_POST['download']))
               {
-                download($_POST['filePathDownload']);
+                download($key['path']);
               }
               echo '<td><form action="visualisation.php" method="post">
                         <input name="filePathVisualiser" type="hidden" value = "'.$key['path'].'"/>

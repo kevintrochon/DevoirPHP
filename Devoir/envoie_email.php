@@ -9,7 +9,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <p style="padding-left:25px;"><a href="recherche_patient.php" class="navbar-brand">Retour au formulaire</a></p>
         <p><a href="formDepot.php" title="Téléverser-documents" class="navbar-brand">Téléverser</a></p>
-        <p><a href="recherche_document.php" title="Recherche-documents" class="navbar-brand">Récherche des documents</a></p>
+        <p><a href="recherche_document.php" title="Recherche-documents" class="navbar-brand">Recherche des documents</a></p>
     </nav>
     <h1 class="text-center">Saisie d'informations</h1>
     <form method="post" action="envoie_email.php">

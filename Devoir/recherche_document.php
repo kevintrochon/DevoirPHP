@@ -84,24 +84,18 @@
               <td>'.$key['contenu'] .'</td>
               <td>'.$key['typeDocument'] .'</td>
               <td>'.array_values($motifDocument)[1].'</td>';
-              echo '<td><form action="recherche_patient.php" method="post">          
-              <input name="filePathDownloadDocument" type="hidden" value = "'.$key['path'].'"/>
+              echo '<td><form action="recherche_document.php" method="post">          
               <input type="submit" class="btn btn-outline-info" name="download" value="💾" style="width: 100%;height:center;" /></form></td>';
-              if(isset($_POST['filePathDownloadDocument']))
+              if(isset($_POST['download']) && ! empty($_POST['download']))
               {
-                download($_POST['filePathDownloadDocument']);
+                download($key['path']);
               }
               echo '<td><form action="visualisation.php" method="post">
-                                    <input name="filePathVisualiser" type="hidden" value = "'.$key['path'].'"/>
-                                    <input type="submit" class="btn btn-outline-info" name="visualiser" value="👀" style="width: 100%;height:center;"/></form></td>';
-              echo '<td><form action="recherche_patient.php" method="post">
-                    <input name="filePath" type="hidden" value = "'.$key['path'].'"/>
-                    <input type="submit" class="btn btn-outline-info" name="email" value="📧" style="width: 100%;height:center;"/></form></td>';
-            }
-            if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['filePath']))
-            {
-              require_once 'email.php';
-              envoieMail($_POST['filePath']);
+                        <input name="filePathVisualiser" type="hidden" value = "'.$key['path'].'"/>
+                        <input type="submit" class="btn btn-outline-info" name="visualiser" value="👀" style="width: 100%;height:center;"/></form></td>';
+              echo '<td><form action="envoie_email.php" method="post">
+                        <input name="filePath" type="hidden" value = "'.$key['path'].'"/>
+                        <input type="submit" class="btn btn-outline-info" name="email" value="📧" style="width: 100%;height:center;"/></form></td>';
             }
         echo'</tr></tbody></table></div>';
       }

@@ -40,6 +40,6 @@ function envoieMail($email,$attache){
         echo '<p class="alert alert-success" style="padding-left:350px;">E-mail envoyé !</p>';
 
     } catch (Exception $exception) {
-        echo '<p class="alert alert-danger" style="padding-left:350px;">Le message n''a pas pu être envoyé. Mailer Error: {$mail->ErrorInfo}</p>';
+        echo '<p class="alert alert-danger" style="padding-left:350px;">Le message n\'a pas pu être envoyé. Mailer Error: {$mail->ErrorInfo}</p>';
     }
 }
