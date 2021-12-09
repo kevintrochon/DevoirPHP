@@ -209,20 +209,22 @@ function getRecherche() : array{
 /*
   enregistre un document en base de données.
 */
-function enregistreDocument($namePatient,$nameDocument,$pathDocument,$contenu,$typeDocument,$codePatient,$codeMotif):bool{
+function enregistreDocument($namePatient,$prenomPatient,$nameDocument,$pathDocument,$contenu,$typeDocument,$codePatient,$codeMotif):bool{
   require 'db-config.php';
   $isenregistrer;
   try {
     $PDO = new PDO($DB_DSN,$DB_USER,$DB_PASS, $OPTIONS);
     $request;
-    $request = $PDO->prepare('insert into documents (namePatient,name, path,contenu,typeDocument,CodePatients,CodeMotif) values(?,?,?,?,?,?,?)');
-    $request->bindParam(1, $namePatient);
-    $request->bindParam(2, $nameDocument);
-    $request->bindParam(3, $pathDocument);
-    $request->bindParam(4, $contenu);
-    $request->bindParam(5, $typeDocument);
-    $request->bindParam(6, $codePatient);
-    $request->bindParam(7, $codeMotif);
+    $ged = $typeDocument.$contenu.$codeMotif.$nameDocument.$namePatient.$prenomPatient;
+    $request = $PDO->prepare('insert into documents (ged,namePatient,name, path,contenu,typeDocument,CodePatients,CodeMotif) values(?,?,?,?,?,?,?,?)');
+    $request->bindParam(1, $ged);
+    $request->bindParam(2, $namePatient);
+    $request->bindParam(3, $nameDocument);
+    $request->bindParam(4, $pathDocument);
+    $request->bindParam(5, $contenu);
+    $request->bindParam(6, $typeDocument);
+    $request->bindParam(7, $codePatient);
+    $request->bindParam(8, $codeMotif);
     $request -> execute();
     return $isenregistrer = true;
   } catch (PDOException $pe) {
@@ -267,7 +269,9 @@ function getDocument($name):array{
   }
 }
 
-
+/**
+ * Récupère les documents dans la table correspondante.
+ */
 function getDocumentHorsPatient():array{
       require 'db-config.php';
       try {
@@ -295,18 +299,19 @@ function getDocumentHorsPatient():array{
 /**
  * Récupération de le nom du client via son nom.
  */
-function verifNomPatient($name):bool{
+function verifNomPatient($name,$prenom):bool{
   require 'db-config.php';
-  $is_exist = $false;
+  $is_exist = false;
   try {
     $PDO = new PDO($DB_DSN,$DB_USER,$DB_PASS, $OPTIONS);
     $request;
-    $request = $PDO->prepare('SELECT Nom FROM patients WHERE Nom = ?');
+    $request = $PDO->prepare('SELECT Nom FROM patients WHERE Nom = ? AND Prenom = ?');
     $request->bindParam(1, $name);
+    $request->bindParam(2, $prenom);
     $request -> execute();
     $resultat = $request -> fetch(PDO::FETCH_ASSOC);
     if(!empty($resultat) && isset($resultat)){
-      $is_exist = $true;
+      $is_exist = true;
     }
     return $is_exist;
   } catch (PDOException $pe) {

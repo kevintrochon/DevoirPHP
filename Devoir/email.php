@@ -7,6 +7,7 @@ use PHPMailer\PHPMailer\SMTP;
 require_once 'include/PHPMailer/Exception.php';
 require_once 'include/PHPMailer/PHPMailer.php';
 require_once 'include/PHPMailer/SMTP.php';
+
 function envoieMail($email,$attache){
     try {
         // configuration :

@@ -85,7 +85,7 @@
                       </thead>';
         $index = 0;
         foreach(getRecherche() as $key){
-        //Si oui on affiche le résultat de la recherche.
+        //Si oui on affiche le résultat de la recherche dans une table.
         echo '<tr>
               <th scope="row">'.++$index.'</th>
               <td>'.$key['Nom'] .'</td>

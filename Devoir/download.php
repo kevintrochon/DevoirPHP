@@ -1,4 +1,5 @@
 <?php
+// On regarde si demande de téléchargement provient de la recherche du client ou de document.
 if(isset($_POST['download']) && ! empty($_POST['download']) && $_POST['filePath'] && ! empty($_POST['filePath']) && isset($_POST['patient']) && ! empty($_POST['patient']))
 {
     require_once 'utilitaire.php';

@@ -58,7 +58,7 @@
       require_once 'utilitaire.php';
       //On vérifie qu'une recherche a été lancée.
       if (lancerRecherche()) {
-        //Si oui on affiche le résultat de la recherche.
+        //Si oui on affiche le résultat de la recherche dans un élément de type table.
         echo '<div class="table-responsive" background-color: lightGreen;border: 1px solid black;" style="padding-left:50px;">
                 <table class="table table-bordered" style="width: 1300px;height:50px;">
                     <tbody>

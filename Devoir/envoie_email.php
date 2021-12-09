@@ -12,6 +12,7 @@
         <p><a href="recherche_document.php" title="Recherche-documents" class="navbar-brand">Recherche des documents</a></p>
     </nav>
     <h1 class="text-center">Saisie d'informations</h1>
+    <!-- Formulaire de récupération de l'adresse e-mail du client. -->
     <form method="post" action="envoie_email.php">
       <!-- champ d'entrée adresse e-mail. -->
     <div  class="h4" style="padding-left:350px;">
