@@ -1,4 +1,5 @@
 -- Création de la base de données "hopital_php".
+DROP DATABASE if exists hopital_php;
 CREATE DATABASE hopital_php DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
 -- Utilisation de la base créée.
