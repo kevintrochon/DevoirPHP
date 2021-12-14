@@ -53,7 +53,7 @@ CREATE TABLE Documents
 );
 
 -- Création de l'utilisateur user1 avec le password hcetylop.
-
+DROP user if exists 'user1'@'localhost';
 CREATE USER 'user1'@'localhost' IDENTIFIED BY 'hcetylop';
 
 -- Accord de tous les droits sur la base de données.
