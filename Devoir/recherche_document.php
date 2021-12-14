@@ -15,13 +15,13 @@
       <!-- champ d'entrée du nom du document. -->
       <div class="form-group">
         <div style="padding-left:350px;">
-          <label for="iduser" class="h4" > Nom document : </label>
+          <label for="iduser" class="h4" > Nom du document : </label>
         </div>
         <div  class="h4" style="padding-left:350px;">
           <input type="text" class="form-control" id="iduser" name="user" autofocus style="width: 250px;height:35px;" placeholder="prescription, identitée,..." />
         </div>
         <div style="padding-left:350px;">
-          <label for="typDocu" class="h4" > Type document : </label>
+          <label for="typDocu" class="h4" > Type de document : </label>
         </div>
         <div  class="h4" style="padding-left:350px;">
           <input type="text" class="form-control" id="typDocu" name="typDocu" autofocus style="width: 250px;height:35px;" placeholder="pdf, png, jpeg, jpg, gif,..." />
@@ -64,15 +64,15 @@
                     <tbody>
                       <thead>
                         <tr>
-                          <th scope="col">Numéro ligne</th>
+                          <th scope="col">Numéro de ligne</th>
                           <th scope="col">Nom du patient</th>
                           <th scope="col">Nom du document</th>
-                          <th scope="col">contenu</th>
-                          <th scope="col">typeDocument</th>
-                          <th scope="col">path</th>
-                          <th scope="col">Telechargement</th>
+                          <th scope="col">Contenu</th>
+                          <th scope="col">Type de Document</th>
+                          <th scope="col">Motif d\'admission</th>
+                          <th scope="col">Téléchargement</th>
                           <th scope="col">Visualiser</th>
-                          <th scope="col">email</th>
+                          <th scope="col">Email</th>
                         </tr>
                       </thead>';
         $index = 0;

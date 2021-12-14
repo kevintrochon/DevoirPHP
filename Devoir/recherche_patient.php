@@ -18,7 +18,7 @@
           <label for="iduser" class="h4" > Nom : </label>
         </div>
         <div  class="h4" style="padding-left:350px;">
-          <input type="text" class="form-control" id="iduser" name="user" autofocus style="width: 250px;height:35px;" placeholder="Nom du patient !!!" />
+          <input type="text" class="form-control" id="iduser" name="user" autofocus style="width: 250px;height:35px;" placeholder="Nom du patient" />
         </div>
         <div style="padding-left:350px;">
           <label for="motifs"  class="h4">Motif d'admission : </label>
@@ -73,14 +73,14 @@
                     <tbody>
                       <thead>
                         <tr>
-                          <th scope="col">Numéro ligne</th>
+                          <th scope="col">Numéro de ligne</th>
                           <th scope="col">Nom</th>
-                          <th scope="col">Prenom</th>
-                          <th scope="col">Details</th>
-                          <th scope="col">Nom document</th>
-                          <th scope="col">Telechargement</th>
+                          <th scope="col">Prénom</th>
+                          <th scope="col">Détails</th>
+                          <th scope="col">Nom du document</th>
+                          <th scope="col">Téléchargement</th>
                           <th scope="col">Visualiser</th>
-                          <th scope="col">email</th>
+                          <th scope="col">Email</th>
                         </tr>
                       </thead>';
         $index = 0;

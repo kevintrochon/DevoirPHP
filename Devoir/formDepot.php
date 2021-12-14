@@ -19,7 +19,7 @@
           <input type="text" class="form-control" id="iduser" name="name" autofocus style="width: 250px;height:35px;" required="required" />
         </div>
         <div>
-          <label for="idprenom" class="h4" > Prenom du patient : </label>
+          <label for="idprenom" class="h4" > Prénom du patient : </label>
         </div>
         <div  class="h4">
           <input type="text" class="form-control" id="idprenom" name="prenom" autofocus style="width: 250px;height:35px;" required="required" />
